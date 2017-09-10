@@ -1,9 +1,21 @@
-{% extends "personal/template.html" %}
+{% extends 'personal/template.html' %}
 
 {% block content %}
 <!-- include the navBar. Change navBar at navBar.html -->
 {% include 'personal/navBar.html' %}
 <!-- Body -->
-<h1> This is login.html</h1>
-Afadsfa
+
+<div><br><br><br></div>
+<div class = 'info container-fluid'>
+  <h1>Welcome</h1>
+  <p>
+    You can log in here!
+  </p>
+  <h2>Login</h2>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Login</button>
+  </form>
+</div>
 {% endblock %}
